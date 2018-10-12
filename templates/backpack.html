@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇仓库</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<input type="hidden" class="level" value="{{ level }}">
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/backpack/">仓库</a></div>
+    </div><!--1.顶部导航-->
+
+    <!--2.菜单导航-->
+    <nav class="breadcrumb">
+        {% for prop_level in prop_level_obj %}
+            <a class="breadcrumb-item active_{{ forloop.counter }}" href="?level={{ forloop.counter }}">{{ prop_level.name }}</a>
+        {% endfor %}
+    </nav><!--2.菜单导航-->
+
+    <!--3.条件循环-->
+    {% if level == '2' %}
+        <div class="row">
+            {% for k, v in prop_dic_2.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% elif level == '3' %}
+        <div class="row">
+            {% for k, v in prop_dic_3.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% elif level == '4' %}
+        <div class="row">
+            {% for k, v in prop_dic_4.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% elif level == '5' %}
+        <div class="row">
+            {% for k, v in prop_dic_5.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+            {% elif level == '6' %}
+        <div class="row">
+            {% for k, v in prop_dic_6.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+            {% elif level == '7' %}
+        <div class="row">
+            {% for k, v in prop_dic_7.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+            {% elif level == '8' %}
+        <div class="row">
+            {% for k, v in prop_dic_8.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <div class="row">
+            {% for k, v in prop_dic_1.items %}
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-outline-success">{{ k }}×{{ v }}</button>
+                    <div class="span_bottom">
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=used">使用</a></span>
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=view">查看</a></span>
+                        <span class=""><a href="/backpack/option/{{ k }}/?method=sell">出售</a></span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% endif %}<!--3.条件循环-->
+
+    <!--4.底部菜单栏-->
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+<script>
+    var level = $('.level').val()
+    if (level==2) {
+        $('.active_2').addClass('active');
+    } else if (level==3) {
+        $('.active_3').addClass('active');
+    } else if (level==4) {
+        $('.active_4').addClass('active');
+    } else if (level==5) {
+        $('.active_5').addClass('active');
+    } else if (level==6) {
+        $('.active_6').addClass('active');
+    } else {
+        $('.active_1').addClass('active');
+    }
+</script>
+
+</body>
+</html>

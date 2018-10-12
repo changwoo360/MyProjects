@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<input type="hidden" class="level" value="{{ level }}">
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/my_recipe/">已学菜谱</a></div>
+    </div><!--1.顶部导航--><br>
+
+    <!--2.菜单导航-->
+    <nav class="breadcrumb">
+        {% for repice_class in recipe_class_obj %}
+            <a class="breadcrumb-item active_{{ forloop.counter }}"
+               href="?level={{ forloop.counter }}">{{ repice_class.name }}</a>
+        {% endfor %}
+    </nav><!--2.菜单导航-->
+
+    <!--3.条件循环-->
+    {% if level == '2' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_2 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    {% elif level == '3' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_3 %}
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif level == '4' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_4 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif level == '5' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_5 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif level == '6' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_6 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% elif level == '7' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_7 %}
+                    <tr>
+                          <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% elif level == '8' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_8 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% elif level == '9' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_9 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% elif level == '10' %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_10 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% else %}
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>菜名</th>
+                    <th>当前品质</th>
+                    <th>价格</th>
+                    <th>耗油量</th>
+                    <th>经验值</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for study_obj in recipe_class_1 %}
+                    <tr>
+                        <td>
+                            <a href="/recipe/{{ study_obj.recipe_name.pk }}/">{{ study_obj.recipe_name.name }}</a>
+                        </td>
+                        <td>{{ study_obj.get_level_display }}</td>
+                        <td>{{ study_obj.price }}金币</td>
+                        <td>{{ study_obj.oil_used }}ml</td>
+                        <td>{{ study_obj.experience }}Exp</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% endif %}<!--3.条件循环-->
+
+    <!--4.底部菜单栏-->
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+</div>
+
+<script>
+
+    var level = $('.level').val()
+    if (level == 2) {
+        $('.active_2').addClass('active');
+    } else if (level == 3) {
+        $('.active_3').addClass('active');
+    } else if (level == 4) {
+        $('.active_4').addClass('active');
+    } else if (level == 5) {
+        $('.active_5').addClass('active');
+    } else if (level == 6) {
+        $('.active_6').addClass('active');
+    } else if (level == 7) {
+        $('.active_7').addClass('active');
+    } else if (level == 8) {
+        $('.active_8').addClass('active');
+    } else if (level == 9) {
+        $('.active_9').addClass('active');
+    } else if (level == 10) {
+        $('.active_10').addClass('active');
+    } else {
+        $('.active_1').addClass('active');
+    }
+
+</script>
+
+</div>
+
+</body>
+</html>

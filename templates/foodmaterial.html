@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇食材</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/foodmaterial/">食材</a></div>
+    </div><!--1.顶部导航--><br>
+
+    <!--2.搜索框-->
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="搜索食材">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit">Go</button>
+     </div>
+  </div><!--2.搜索框-->
+
+    <!--3.食材循环-->
+    <div>
+
+        一级食材：<br>
+        <div class="row">
+            {% for obj in food_material %}
+                {% if obj.food_material_level.id == 1 %}
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-outline-success">{{ obj.food_material }}</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+
+        二级食材：<br>
+        <div class="row">
+            {% for obj in food_material %}
+                {% if obj.food_material_level.id == 2 %}
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-outline-info">{{ obj.food_material }}</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+
+        三级食材：<br>
+        <div class="row">
+            {% for obj in food_material %}
+                {% if obj.food_material_level.id == 3 %}
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-outline-warning">{{ obj.food_material }}</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+
+        四级食材：<br>
+        <div class="row">
+            {% for obj in food_material %}
+                {% if obj.food_material_level.id == 4 %}
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-outline-danger">{{ obj.food_material }}</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <br>
+
+        五级食材：<br>
+        <div class="row">
+            {% for obj in food_material %}
+                {% if obj.food_material_level.id == 5 %}
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-outline-dark">{{ obj.food_material }}</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div><!--3.食材循环-->
+
+    <!--4.底部菜单栏--><br>
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+</body>
+</html>

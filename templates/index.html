@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>美味小镇</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/logo_2.png" alt="">
+        <div><a href="/index/">美味小镇</a></div>
+    </div><!--1.顶部导航-->
+
+    <div>
+        <img src="/static/logo_1.gif" alt=""><br>
+        昵称:{{ user.name }}(ID:{{ user.pk }}).<a href="">签到</a><br>
+        <a href="">餐厅信息</a>｜<a href="">好友餐厅</a><br>
+        餐厅等级:{{ user.level }}(11109/12437)<br>
+        今日活跃点:5.<a href="">领取</a><br>
+        体力:{{ user.energy }}/100.<a href="">恢复</a><br>
+        最新收益+40金币 +40经验<br>
+        油壶:1084/1100.<a href="">添加</a>.<a href="">扩容</a><br>
+        清洁度:300/300.<a href="">打扫</a><br>
+        金币:{{ user.coin }}<br>
+        元宝:{{ user.wing }}.<a href="/buy_money/">充值</a><br>
+        街道:{% if user.street %}{{ user.get_street_display }}{% else %}新手街{% endif %}.<a href="/home_address/">搬家</a><br>
+        金牌菜:未开启<br>
+        <a href="/test_1/">收益加成</a>.<a href="/test_2/">专属设施</a>.<a href="/test_3/">荣誉勋章</a><br>
+        设施位:餐厅1星后开启该功能<br>
+    </div>
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/my_recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="/market/">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div>
+
+
+</div><!-- div.container -->
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇充值中心</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <style>
+        .row {
+            margin-top: 60px;
+        }
+
+         pre a {
+            font-size: 18px;
+            text-decoration:none;
+            color: #0051A4;
+        }
+
+         .bottom a {
+            text-decoration: none;
+            color: #0051A4;
+            font-size: 18px;
+        }
+        /* 导航条 */
+        .bar {
+            width: 100%;
+            height: 35px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .bar img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            z-index: 1;
+
+        }
+
+        .bar div {
+            position: absolute;
+            top: 4px;
+            left: 5px;
+            width: 100%;
+            height: 35px;
+            z-index: 2;
+
+        }
+
+        .bar div a {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/buy_money/">充值中心</a></div>
+    </div><!--1.顶部导航-->
+
+    <!--2.用户信息-->
+    <div>
+        用户:{{ user_obj.name }}<br>
+        金币:{{ user_obj.coin }}&nbsp;&nbsp;&nbsp;&nbsp;
+        元宝:{{ user_obj.wing }}
+    </div><!--2.用户信息-->
+
+    <!--3.钻石充值-->
+    <div class="row">
+        <div class="col-md-3 text-center border">
+            元宝 ×600 <br>
+            购买可获得600元宝 <br>
+            <a href="/buy_money/?buy=a6">RMB ￥ 6</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×2500 <br>
+            购买可获得2500元宝 <br>
+            <a href="/buy_money/?buy=a25">RMB ￥ 25</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×5000 <br>
+            购买可获得5000元宝 <br>
+            <a href="/buy_money/?buy=a50">RMB ￥ 50</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×9800 <br>
+            购买可获得9800元宝 <br>
+            <a href="/buy_money/?buy=a98">RMB ￥ 98</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-center border">
+            元宝 ×12800 <br>
+            购买可获得12800元宝 <br>
+            <a href="/buy_money/?buy=a128">RMB ￥ 128</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×19800 <br>
+            购买可获得19800元宝 <br>
+            <a href="/buy_money/?buy=a198">RMB ￥ 198</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×32800 <br>
+            购买可获得32800元宝 <br>
+            <a href="/buy_money/?buy=a328">RMB ￥ 328</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            元宝 ×64800 <br>
+            购买可获得64800元宝 <br>
+            <a href="/buy_money/?buy=a648">RMB ￥ 648</a>
+        </div>
+    </div><!--3.钻石充值-->
+
+    <!--4.金币充值-->
+    <div class="row">
+        <div class="col-md-3 text-center border">
+            金币 ×6w <br>
+            购买可获得6万金币 <br>
+            <a href="/buy_money/?buy=b6">RMB ￥ 6</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×25w <br>
+            购买可获得25万金币 <br>
+            <a href="/buy_money/?buy=b25">RMB ￥ 25</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×50w <br>
+            购买可获得50万金币 <br>
+            <a href="/buy_money/?buy=b50">RMB ￥ 50</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×98w <br>
+            购买可获得98万金币 <br>
+            <a href="/buy_money/?buy=b98">RMB ￥ 98</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-center border">
+            金币 ×128w <br>
+            购买可获得128万金币 <br>
+            <a href="/buy_money/?buy=b128">RMB ￥ 128</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×198w <br>
+            购买可获得198万金币 <br>
+            <a href="/buy_money/?buy=b198">RMB ￥ 198</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×328w <br>
+            购买可获得328万金币 <br>
+            <a href="/buy_money/?buy=b328">RMB ￥ 328</a>
+        </div>
+        <div class="col-md-3 text-center border">
+            金币 ×648w <br>
+            购买可获得648万金币 <br>
+            <a href="/buy_money/?buy=b648">RMB ￥ 648</a>
+        </div>
+    </div><!--4.金币充值-->
+
+    <!--4.底部菜单栏--><br><br>
+    <div class="bottom">
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇登陆</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            background-color: #f8f8f8;
+        }
+
+        .bac {
+            width: 400px;
+            height: 350px;
+            margin: 100px auto;
+            background-color: white;
+            border:1px solid #D0D0D0;
+        }
+
+        .title {
+            height: 50px;
+            width: 100%;
+            background-color: #417690;
+            padding: 5px 16px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .content {
+            padding: 20px 20px 20px 20px;
+        }
+
+        .content label {
+            padding-right: 0.5em;
+            line-height: 2em;
+            font-size: 1em;
+            clear: both;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="bac">
+        <div class="title">登陆游戏</div>
+        <div class="content">
+            <form action="/login/" method="post" novalidate>
+                {% csrf_token %}
+                <label for="username">用户名:</label>
+                <input type="text" id="username" name="username" placeholder=" 用户名" class="form-control">
+                <label for="password">密码:</label>
+                <input type="password" id="password" name="password" placeholder=" 密码" class="form-control"><br>
+                <input type="submit" value="登陆" class="btn btn-info" style="width: 100%">
+            </form>
+            <!--<a href="/register/"><input type="submit" value="去注册" class="btn btn-danger" style="width: 100%"></a>-->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

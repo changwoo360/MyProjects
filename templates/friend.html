@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇排行榜/街坊</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/friend/">排行榜</a></div>
+    </div><!--1.顶部导航-->
+
+    <!--2.不同排行榜--><!--2.不同排行榜-->
+
+    <!--3.排行榜循环--><br>
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>玩家</th>
+            <th>等级</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in user_obj %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.level }}</td>
+        </tr>{% endfor %}
+        </tbody>
+    </table><!--3.排行榜循环-->
+
+    <!--4.底部菜单栏-->
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+</body>
+</html>

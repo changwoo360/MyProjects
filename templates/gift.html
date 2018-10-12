@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小镇礼包</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/gift/">礼包</a></div>
+    </div><!--1.顶部导航--><br>
+
+    <!--2.兑换码-->
+    <div>
+    <p>请在下方输入礼包码: </p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                    <input type="submit" class="btn btn-info" value="领取">
+                </span>
+        </div><!-- /input-group -->
+    </form>
+</div><!--2.兑换码-->
+
+    <!--3.提示--><br>
+    <div>
+        【温馨提示】<br>
+        1.每个兑换码只能使用一次.<br>
+        2.每天输入礼包码错误次数达到5次，则当天无法再兑换礼包，需等到次日0点以后才能再次使用该功能.<br>
+    </div><!--3.提示-->
+
+    <!--4.底部菜单栏-->
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+</body>
+</html>

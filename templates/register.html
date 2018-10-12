@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-offset-4">
+            <form action="/register/" method="post" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                <div  class="form-inline">
+                    <label for="">{{ field.label }}:</label>
+                    {{ field }}
+                <!--
+                    <span style="color: red">
+                          {% if field.label == 'R pwd' %}
+                          <span>{{ clean_error.0 }}</span>
+                          {% endif %}
+                          {{ field.errors.0 }}
+                    </span>-->
+                </div>
+            {% endfor %}
+                <!--<input type="submit" value="登陆" class="btn btn-info">-->
+                <input type="submit" value="注册" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

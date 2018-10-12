@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <!--1.顶部导航-->
+    <div class="bar">
+        <img src="/static/image/logo_2.png" alt="">
+        <div><a href="/index/">小镇</a>><a href="/recipe/">菜谱</a>><a href="/recipe_view/">详细页</a></div>
+    </div><!--1.顶部导航-->
+
+    <!--2.详细页信息-->
+    <div>
+        【{{ recipe_object.name }}】<br>
+        菜系:{{ recipe_object.recipe_class.name }}<br>
+        当前品质:未学<br>
+    </div><!--2.详细页信息-->
+
+    <!--3.条件循环-->
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>品质</th>
+            <th>所需材料</th>
+            <th>价格</th>
+            <th>耗油量</th>
+            <th>经验</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for view_obj in recipe_view_obj %}
+            <tr>
+                <td>{{ view_obj.get_level_display }}</td>
+                <td class="recipe_level_{{ forloop.counter }}_replace"></td>
+                <td>{{ view_obj.price }}金币</td>
+                <td>{{ view_obj.oil_used }}ml</td>
+                <td>{{ view_obj.experience }}Exp</td>
+                <td><a href="/recipe_study/?recipe={{ recipe_object.pk }}&level={{ view_obj.level }}">学习</a></td>
+            </tr>
+        {% endfor %}
+        <div>
+            {% for food_list in recipe_level %}
+                <td style="display: none" class="recipe_level_{{ forloop.counter }}">
+                    {% for food in food_list %}{{ food }} &nbsp{% endfor %}</td>
+            {% endfor %}
+
+        </div>
+
+
+        </tbody>
+    </table><!--3.条件循环-->
+
+    <!--4.底部菜单栏-->
+    <div>
+        <a href="/ambry/">橱柜</a>｜<a href="/backpack/">仓库</a>｜<a href="/recipe/">菜谱</a>｜
+        <a href="">餐厅</a>｜<a href="">菜场</a>｜<a href="/shop/">商城</a><br>
+
+        <a href="">消息</a>｜<a href="">神殿</a>｜<a href="">酒吧</a>｜
+        <a href="/friend/">街坊</a>｜<a href="">排行</a>｜<a href="/buy_money/">充值</a><br>
+
+        <a href="/foodmaterial/">食材</a>｜<a href="/recipe/">菜谱</a>｜<a href="/treasure/">圣地</a>｜
+        <a href="/index/">首页</a>｜<a href="/gift/">礼包</a>｜<a href="/logout/">注销</a><br>
+    </div><!--4.底部菜单栏-->
+
+</div>
+
+<script>
+    var recipe_level_1_text = $('.recipe_level_1').text();
+    $('.recipe_level_1_replace').text(recipe_level_1_text + '×1(数量)');
+
+    var recipe_level_2_text = $('.recipe_level_2').text();
+    $('.recipe_level_2_replace').text(recipe_level_2_text + '×10(数量)');
+
+    var recipe_level_3_text = $('.recipe_level_3').text();
+    $('.recipe_level_3_replace').text(recipe_level_3_text + '×30(数量)');
+
+    var recipe_level_4_text = $('.recipe_level_4').text();
+    $('.recipe_level_4_replace').text(recipe_level_4_text + '×50(数量)');
+
+    var recipe_level_5_text = $('.recipe_level_5').text();
+    $('.recipe_level_5_replace').text(recipe_level_5_text + '×80(数量)');
+</script>
+</body>
+</html>
