@@ -1,0 +1,62 @@
+
+/* 页面基础css样式 */
+/*  */
+/*  */
+/*  */
+/*  */
+
+/* 全局 */
+* {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #0051A4;
+}
+
+.row {
+    line-height: 30px;
+}
+
+/* 导航条 */
+.bar {
+    width: 100%;
+    height: 35px;
+    position: relative;
+    z-index: 0;
+}
+
+.bar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 1;
+
+}
+
+.bar div {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 100%;
+    height: 35px;
+    z-index: 2;
+
+}
+
+.bar div a {
+    color: black;
+}
+
+
+/* 按钮下的文字 */
+.span_bottom {
+    position: relative;
+    top:-6px;
+}
+.span_bottom a {
+    font-size: 14px;
+}
